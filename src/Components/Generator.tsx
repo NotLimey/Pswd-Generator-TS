@@ -10,10 +10,10 @@ import { toast } from 'react-toastify'
 const Generator = () => {
     const [password, setPassword] = useState('')
     const [passwordLength, setPasswordLength] = useState(12)
-    const [includeUppercase, setIncludeUppercase] = useState(false)
-    const [includeLowercase, setIncludeLowercase] = useState(false)
+    const [includeUppercase, setIncludeUppercase] = useState(true)
+    const [includeLowercase, setIncludeLowercase] = useState(true)
     const [includeNumbers, setIncludeNumbers] = useState(true)
-    const [includeSymbols, setIncludeSymbols] = useState(false)
+    const [includeSymbols, setIncludeSymbols] = useState(true)
 
     const GetCharacterList = () => {
         var charList : string = "";
@@ -54,6 +54,9 @@ const Generator = () => {
 
     return (
         <React.Fragment>
+            <div>
+                <input min="1" max="40" type="range" onChange={e => setPasswordLength(parseInt(e.target.value))} />
+            </div>
             <div>
                 <label>Include lowercase</label>
                 <input type="checkbox" 
