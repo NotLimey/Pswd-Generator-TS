@@ -5,13 +5,14 @@ import {
     lowerCaseLetters,
     specialCharacters,
 } from '@Components/Characters'
+import { toast } from 'react-toastify'
 
 const Generator = () => {
     const [password, setPassword] = useState('')
     const [passwordLength, setPasswordLength] = useState(12)
-    const [includeUppercase, setIncludeUppercase] = useState(true)
-    const [includeLowercase, setIncludeLowercase] = useState(true)
-    const [includeNumbers, setIncludeNumbers] = useState(true)
+    const [includeUppercase, setIncludeUppercase] = useState(false)
+    const [includeLowercase, setIncludeLowercase] = useState(false)
+    const [includeNumbers, setIncludeNumbers] = useState(false)
     const [includeSymbols, setIncludeSymbols] = useState(false)
 
     const GetCharacterList = () => {
@@ -37,6 +38,11 @@ const Generator = () => {
         const charListLength = charList.length;
 
         var pswd : string = "";
+
+        if(charListLength <= 0) {
+            toast.error("NO!")
+            return;
+        }
 
         for (let i = 0; i < passwordLength; i++) {
             const characterIndex = Math.round(Math.random() * charListLength)

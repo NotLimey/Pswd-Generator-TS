@@ -11,15 +11,16 @@ const Home = () => {
                 SubTitle="Generator"
             />
             <ToastContainer
-                position="top-right"
+                position="top-center"
                 autoClose={5000}
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick
                 rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
+                pauseOnFocusLoss={false}
+                draggable={false}
+                pauseOnHover={false}
+                theme="dark"
             />
             <h1 className="text-center">Password Generator</h1>
             <Generator />
