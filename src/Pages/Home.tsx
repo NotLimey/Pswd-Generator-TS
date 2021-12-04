@@ -1,6 +1,6 @@
 import React from "react";
 import DefaultHelmet from "@/Components/DefaultHelmet";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Generator from "@/Components/Generator";
 
