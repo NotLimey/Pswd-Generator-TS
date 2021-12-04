@@ -4,7 +4,7 @@ import FavIcon from '@Assets/favicon.ico';
 // For information on how to use this go to https://github.com/NotLimey/SRT-Template/blob/main/README.md#default-helmet
 
 const WebsiteUrl = window.location.href;
-const DefaultTitle = "RTS Template";
+const DefaultTitle = "Password Generator";
 const ThemeColor = "#000000";
 const DefaultDescription = 
     `This is a react application made with React-Typescript structured template (https://github.com/NotLimey/React-Typescript-Structured-Template)`
