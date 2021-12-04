@@ -12,7 +12,7 @@ const Generator = () => {
     const [passwordLength, setPasswordLength] = useState(12)
     const [includeUppercase, setIncludeUppercase] = useState(false)
     const [includeLowercase, setIncludeLowercase] = useState(false)
-    const [includeNumbers, setIncludeNumbers] = useState(false)
+    const [includeNumbers, setIncludeNumbers] = useState(true)
     const [includeSymbols, setIncludeSymbols] = useState(false)
 
     const GetCharacterList = () => {
@@ -54,6 +54,34 @@ const Generator = () => {
 
     return (
         <React.Fragment>
+            <div>
+                <label>Include lowercase</label>
+                <input type="checkbox" 
+                    checked={includeLowercase}
+                    onChange={e => setIncludeLowercase(e.target.checked)}
+                />
+            </div>
+            <div>
+                <label>Include uppercase</label>
+                <input type="checkbox"
+                    checked={includeUppercase}
+                    onChange={e => setIncludeUppercase(e.target.checked)}
+                />
+            </div>
+            <div>
+                <label>Include numbers</label>
+                <input type="checkbox" 
+                    checked={includeNumbers}
+                    onChange={e => setIncludeNumbers(e.target.checked)}
+                />
+            </div>
+            <div>
+                <label>Include special characters</label>
+                <input type="checkbox" 
+                    checked={includeSymbols}
+                    onChange={e => setIncludeSymbols(e.target.checked)}
+                />
+            </div>
             <p>{password}</p>
             <button onClick={GeneratePassword}>Generate Password</button>
         </React.Fragment>
